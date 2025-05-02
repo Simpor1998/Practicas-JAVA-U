@@ -29,6 +29,7 @@ public class MaquinaSnacks {
         }
     }
 
+
     private static int mostrarMenu(Scanner consola){
         System.out.print("""
                 Menu:

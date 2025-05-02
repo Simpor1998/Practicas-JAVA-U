@@ -18,6 +18,7 @@ public class Snacks {
         snacks.add(snack);
     }
 
+
     public static void mostrarSnacks(){
         var inventarioSnacks = "";
         for(var snack: snacks){

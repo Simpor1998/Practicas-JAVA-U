@@ -23,6 +23,7 @@ public class Snack implements Serializable {
         this.precio = precio;
     }
 
+
     public static int getContadorSnack() {
         return contadorSnack;
     }
