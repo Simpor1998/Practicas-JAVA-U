@@ -50,10 +50,10 @@ public class Snack implements Serializable {
 
     @Override
     public String toString() {
-        return "Snack{\n" +
+        return "Snack{ " +
                 "IdSnack=" + idSnack +
-                "\nNombre='" + nombre + '\'' +
-                "\nPrecio=" + precio +
+                ", Nombre='" + nombre + '\'' +
+                ", Precio=" + precio +
                 '}';
     }
 
