@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Arreglos/Arreglos.iml" filepath="$PROJECT_DIR$/Arreglos/Arreglos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CURSO UDEMY/CURSO UDEMY.iml" filepath="$PROJECT_DIR$/CURSO UDEMY/CURSO UDEMY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cadenas/Cadenas.iml" filepath="$PROJECT_DIR$/Cadenas/Cadenas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ciclos/Ciclos.iml" filepath="$PROJECT_DIR$/Ciclos/Ciclos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Clases/Clases.iml" filepath="$PROJECT_DIR$/Clases/Clases.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Funciones/Funciones.iml" filepath="$PROJECT_DIR$/Funciones/Funciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntroduccionJava/IntroduccionJava.iml" filepath="$PROJECT_DIR$/IntroduccionJava/IntroduccionJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JAVA GLOBAL.iml" filepath="$PROJECT_DIR$/.idea/JAVA GLOBAL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ManejoConsola/ManejoConsola.iml" filepath="$PROJECT_DIR$/ManejoConsola/ManejoConsola.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Matrices/Matrices.iml" filepath="$PROJECT_DIR$/Matrices/Matrices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operadores/Operadores.iml" filepath="$PROJECT_DIR$/Operadores/Operadores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SentenciasDecision/SentenciasDecision.iml" filepath="$PROJECT_DIR$/SentenciasDecision/SentenciasDecision.iml" />
+    </modules>
+  </component>
+</project>
