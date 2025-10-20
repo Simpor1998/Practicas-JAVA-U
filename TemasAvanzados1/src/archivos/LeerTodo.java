@@ -20,7 +20,7 @@ public class LeerTodo {
 
         } catch (Exception e) {
             System.out.println("Error al leer archivo: " + e.getMessage());
-            // si queremos mandar a llamar todo el detalle mandamos a llamar el metodo  printStackTrace
+            // si queremos mandar a llamar all el detalle mandamos a llamar el metodo  printStackTrace
             e.printStackTrace();
         }
     }
