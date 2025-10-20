@@ -9,8 +9,9 @@ public class ArgumentosVariables {
         imprimirNumeros(numeros);
     }
 
-    static void imprimirNumeros(int... numeros) {
-        for (var i = 0; i < numeros.length; i++)
+    static void imprimirNumeros(int... numeros){
+        for(var i=0; i < numeros.length; i++)
             System.out.print(numeros[i] + " ");
     }
+
 }
