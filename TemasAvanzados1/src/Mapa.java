@@ -3,31 +3,75 @@ import java.util.Map;
 
 public class Mapa {
     public static void main(String[] args) {
-        // se usa como un mapa o diccionario osea es de estilo llave cadena
-        //usamos la clase hhashmap y la interface map
-        Map<String, String> persona = new HashMap<>();
-        persona.put("nombre", "Diego");
-        persona.put("apellido", "Flores");
-        persona.put("edad", "31");
-        persona.put("edad", "31"); // no se permiten duplicados
-        System.out.println("Valores del mapa: ");
-        // no mandamos a llamar al for each si no primero mandamos a generar un tipo set con
-        // entryset, tendra los valores de llave o valor, no almacenara orden ni duplicados
-        // despues por cada una de los elementos de tipo set que vamos a recuperar, se imprimira
-        //cada uno de los elementos de este set en forma de llave valor
 
-        persona.entrySet().forEach(System.out::println);
-        persona.put("edad", "35"); // Modificar el valor de la llave existente
-        persona.remove("apellido"); // se remueven por la llave
-        System.out.println("\nNuevos valores del mapa:");
-        persona.entrySet().forEach(System.out::println);
+        // Creamos un Map de tipo <String, Integer>
+        // La clave será el nombre de la fruta y el valor será la cantidad
+        Map<String, Integer> frutas = new HashMap<>();
 
-        //Iterar sobres los elementos del mapa por separado
-        System.out.println("\nIterando los elementos (llave, valor)");
-        //itera entre la dualidad de las llaves y valor , las variabels que estan ahi
-        //solo sirven para recibir los elmentos a  imprimir
-        persona.forEach((llave, valor) -> {
-            System.out.println("Llave: " + llave + ", Valor: " + valor);
-        });
+        // Agregamos elementos al Map usando put(clave, valor)
+        frutas.put("Manzana", 10);
+        frutas.put("Banano", 5);
+        frutas.put("Fresa", 20);
+        frutas.put("Mango", 15);
+        frutas.put("Banano", 8); // Si la clave ya existe, reemplaza el valor
+
+        // Imprimimos todo el Map
+        System.out.println("Frutas con sus cantidades: " + frutas);
+
+        // Accedemos a un valor usando su clave
+        System.out.println("Cantidad de Fresas: " + frutas.get("Fresa"));
+
+        // Verificar si una clave existe
+        if (frutas.containsKey("Mango")) {
+            System.out.println("El Map contiene Mango");
+        }
+
+        // Verificar si un valor existe
+        if (frutas.containsValue(8)) {
+            System.out.println("Al menos una fruta tiene 8 unidades");
+        }
+
+        // Eliminar un elemento usando la clave
+        frutas.remove("Manzana");
+
+        // Recorrer el Map usando for-each sobre entrySet()
+        System.out.println("Frutas restantes:");
+        for (Map.Entry<String, Integer> entry : frutas.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+        // Recorrer el Map usando lambda y método de referencia
+        System.out.println("Recorrido con lambda:");
+        frutas.forEach((clave, valor) -> System.out.println(clave + ": " + valor));
     }
 }
+
+/*
+Explicación:
+
+1. Map:
+   - Almacena pares clave-valor.
+   - Cada clave es única, pero los valores pueden repetirse.
+   - HashMap:
+       * No mantiene orden.
+       * Permite claves y valores nulos.
+       * Acceso rápido a los elementos por clave.
+   - TreeMap:
+       * Mantiene las claves ordenadas de forma natural.
+       * No permite claves nulas.
+       * Operaciones ligeramente más lentas que HashMap debido al ordenamiento interno.
+
+2. Métodos principales:
+   - .put(clave, valor): agrega o reemplaza un elemento.
+   - .get(clave): obtiene el valor asociado a la clave.
+   - .containsKey(clave): verifica si existe la clave.
+   - .containsValue(valor): verifica si existe el valor.
+   - .remove(clave): elimina el par clave-valor.
+   - .entrySet(): devuelve un conjunto de entradas (clave-valor) para recorrer con for-each.
+   - .forEach((clave, valor) -> …): recorre el Map de manera funcional usando lambda.
+
+3. Observaciones:
+   - HashMap es más rápido cuando el orden no importa.
+   - TreeMap es útil cuando necesitas claves ordenadas.
+   - Lambda y método de referencia permiten recorrer de forma concisa.
+*/
