@@ -11,6 +11,7 @@ public class Snack implements Serializable {
     private String nombre;            // Nombre del snack
     private double precio;            // Precio del snack
 
+    //para allegarlo a un java beans ingresamos el constructor vacio ()
     public Snack() {
         this.idSnack = ++Snack.contadorSnack;
     }
