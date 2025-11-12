@@ -12,7 +12,8 @@ public abstract class Mamifero implements Animal {
     public void respirar() {
         System.out.println(nombre + " está respirando.");
     }
-
+    abstract public void comer();
+    public void dormir() {}
     // Método abstracto: las subclases deben implementarlo
     public abstract void sonido();
 }
