@@ -1,54 +1,69 @@
 package maquina_snacks_archivos.servicio;
 
-import maquina_snacks_archivos.dominio.Snack; // Importa la clase Snack para usarla como tipo en los métodos
-import java.util.List;                         // Importa List para manejar colecciones de snacks
+import maquina_snacks_archivos.dominio.Snack;
+import java.util.List;
 
-// 🔹 Interfaz que define el contrato para manejar snacks
+/**
+ * Interfaz que define el contrato para las operaciones de gestión de snacks.
+ * Establece los métodos que deben implementar las clases de servicio concretas.
+ * 
+ * Nota: Todos los métodos en una interfaz son implícitamente públicos y abstractos.
+ */
 public interface IServicioSnacks {
 
-    /*
-     * 🔹 Agrega un snack al inventario.
-     * @param snack: objeto de tipo Snack que se agregará
-     * Nota: Por defecto, los métodos en interfaces son públicos y abstractos,
-     *       por eso no es necesario escribir 'public abstract'.
+    /**
+     * Agrega un snack al inventario.
+     * La implementación concreta determinará cómo se almacena (memoria, archivo, base de datos).
+     * 
+     * @param snack Parámetro de tipo Snack que representa el objeto a agregar al inventario
      */
     void agregarSnack(Snack snack);
 
-    /*
-     * 🔹 Muestra todos los snacks disponibles en el inventario.
-     * Puede imprimirlos en consola o mostrarlos de la forma que implemente la clase concreta.
+    /**
+     * Muestra todos los snacks disponibles en el inventario.
+     * La implementación concreta determinará el formato de visualización.
      */
     void mostrarSnacks();
 
-    /*
-     * 🔹 Retorna la lista de snacks disponibles en el inventario.
-     * @return List<Snack>: lista de objetos Snack
+    /**
+     * Retorna la lista completa de snacks disponibles en el inventario.
+     * 
+     * @return List<Snack> - Lista que contiene todos los objetos Snack del inventario
      */
     List<Snack> getSnacks();
 }
 
 /*
-───────────────────────────────────────────────
-📘 EXPLICACIÓN GENERAL DE LA INTERFAZ IServicioSnacks
-───────────────────────────────────────────────
-
-1. Propósito:
-   - Definir las operaciones que cualquier servicio de snacks debe implementar.
-   - Permite que diferentes implementaciones (por ejemplo, con lista, con base de datos o con archivos) tengan la misma interfaz.
-
-2. Métodos:
-   - agregarSnack(Snack snack): agrega un nuevo snack al inventario.
-   - mostrarSnacks(): muestra el inventario de snacks.
-   - getSnacks(): devuelve la lista de snacks para poder manipularla o consultarla.
-
-3. Beneficios de usar interfaces:
-   - Permite **polimorfismo**, es decir, se puede cambiar la implementación sin modificar el código que la usa.
-   - Facilita la mantenibilidad y escalabilidad del sistema.
-
-───────────────────────────────────────────────
-💡 Resumen:
-───────────────────────────────────────────────
-IServicioSnacks define qué operaciones se pueden realizar sobre un inventario de snacks,
-pero no dice cómo se implementan. La implementación concreta se hace en clases como ServicioSnacksLista.
-───────────────────────────────────────────────
-*/
+ * DOCUMENTACIÓN TÉCNICA DE LA INTERFAZ IServicioSnacks
+ * =====================================================
+ * 
+ * PROPÓSITO:
+ * Define el contrato (interfaz) que deben cumplir todas las implementaciones
+ * de servicios para gestionar snacks. Permite el uso de polimorfismo y
+ * facilita el cambio de implementación sin modificar el código cliente.
+ * 
+ * PATRÓN DE DISEÑO:
+ * Esta interfaz implementa el patrón Strategy, permitiendo diferentes
+ * estrategias de almacenamiento (memoria, archivos, base de datos).
+ * 
+ * MÉTODOS DEFINIDOS:
+ * - agregarSnack(Snack snack): 
+ *   Parámetro snack: objeto Snack que se agregará al inventario.
+ *   Las implementaciones pueden almacenar en memoria, archivo o base de datos.
+ * 
+ * - mostrarSnacks(): 
+ *   No recibe parámetros. Muestra el inventario según la implementación.
+ * 
+ * - getSnacks(): 
+ *   No recibe parámetros. Retorna List<Snack> con todos los snacks.
+ * 
+ * IMPLEMENTACIONES CONOCIDAS:
+ * - ServicioSnacksLista: Almacenamiento en memoria usando ArrayList
+ * - ServicioSnacksArchivos: Persistencia en archivo de texto
+ * 
+ * BENEFICIOS:
+ * - Polimorfismo: El código cliente puede usar IServicioSnacks sin conocer
+ *   la implementación concreta.
+ * - Desacoplamiento: Facilita cambios de implementación sin afectar otras capas.
+ * - Testabilidad: Permite crear implementaciones mock para pruebas.
+ */
