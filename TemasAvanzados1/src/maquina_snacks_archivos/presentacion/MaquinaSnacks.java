@@ -74,7 +74,7 @@ public class MaquinaSnacks {
             case 2 -> mostrarTicket(productos);                            // Mostrar ticket
             case 3 -> agregarSnack(consola, servicioSnacks);
             case 4 -> listarInventarioSnacks(consola, servicioSnacks);
-            case 4 -> {                                                    // Salir del programa
+            case 5 -> {                                                    // Salir del programa
                 System.out.println("Regresa pronto!");
                 salir = true;
             }
