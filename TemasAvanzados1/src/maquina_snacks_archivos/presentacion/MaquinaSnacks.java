@@ -58,7 +58,8 @@ public class MaquinaSnacks {
                 1. Comprar snack
                 2. Mostrar ticket
                 3. Agregar Nuevo Snack
-                4. Salir
+                4. Inventario Snacks
+                5. Salir
                 Elige una opcion:\s""");
         return Integer.parseInt(consola.nextLine()); // Convertimos la entrada a entero
     }
@@ -71,7 +72,8 @@ public class MaquinaSnacks {
         switch (opcion) {
             case 1 -> comprarSnack(consola, productos, servicioSnacks); // Comprar snack
             case 2 -> mostrarTicket(productos);                            // Mostrar ticket
-            case 3 -> agregarSnack(consola, servicioSnacks);              // Agregar nuevo snack
+            case 3 -> agregarSnack(consola, servicioSnacks);
+            case 4 -> listarInventarioSnacks(consola, servicioSnacks);
             case 4 -> {                                                    // Salir del programa
                 System.out.println("Regresa pronto!");
                 salir = true;
@@ -80,6 +82,11 @@ public class MaquinaSnacks {
         }
 
         return salir; // Retorna true si se quiere salir del bucle
+    }
+
+    private static void listarInventarioSnacks(Scanner consola,
+                                               IServicioSnacks servicioSnacks){
+        servicioSnacks.mostrarSnacks();
     }
 
     // 🔹 Permite comprar un snack según el ID ingresado por el usuario
