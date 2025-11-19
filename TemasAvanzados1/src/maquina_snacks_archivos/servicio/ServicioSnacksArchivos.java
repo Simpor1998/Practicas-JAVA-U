@@ -46,12 +46,18 @@ public class ServicioSnacksArchivos implements IServicioSnacks{
     private List<Snack> obtenerSnacks() {
 //        como al lado derecho dejo el tipo de variable abierto al lado derecho debi indicar el tipo de dato que almaceno
         var snacks = new ArrayList<Snack>();
-        try {
+        try{
             List<String> lineas = Files.readAllLines(Paths.get(NOMBRE_ARCHIVO));
-          
-        }
-        catch (Exception e) {
-            System.out.println("Error al leer el archivo de snacks" + e.getMessage() );
+            for(String linea: lineas){
+                String[] lineaSnack = linea.split(",");//parseo separado por coma
+                var idSnack = lineaSnack[0]; // No se usa
+                var nombre = lineaSnack[1];
+                var precio = Double.parseDouble(lineaSnack[2]);
+                var snack = new Snack(nombre, precio);
+                snacks.add(snack);// agregamos el snack leido a la lista
+            }
+        }catch (Exception e){
+            System.out.println("Error al leer archivo de snacks: " +e.getMessage());
             e.printStackTrace();
         }
         return snacks;
